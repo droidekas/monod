@@ -4,6 +4,9 @@ export default () => {
   return new Promise(resolve => {
     require.ensure([], () => {
       require('highlight.js/styles/zenburn.css');
+      require('katex/dist/katex.min.css');
+
+      require('katex');
 
       resolve({
         hljs: require('highlight.js'),
@@ -14,6 +17,7 @@ export default () => {
           require('markdown-it-sup'),
           require('markdown-it-sub'),
           require('markdown-it-mark'),
+          require('markdown-it-katex'),
         ],
         emojione: require('emojione')
       });
