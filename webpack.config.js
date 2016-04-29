@@ -20,18 +20,7 @@ const PATHS  = {
     build: path.join(__dirname, 'build')
 };
 
-const VERSION = () => {
-  var v;
-
-  try {
-    v = process.env.SOURCE_VERSION || process.env.SHA || childProcess.execSync('git rev-parse HEAD').toString();
-  } catch (e) {
-    // occurs with Heroku deploy button for instance
-    v = 'unknown';
-  }
-
-  return v;
-}();
+const VERSION = 'unknown'
 
 // Used to configure Babel (see: `.babelrc` file)
 process.env.BABEL_ENV = TARGET;
